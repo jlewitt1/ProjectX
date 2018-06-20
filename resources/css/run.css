@@ -74,6 +74,7 @@ body{
 
   #map {
     height: 100%;
+    width: 500px;
   }
 
   .start-point{

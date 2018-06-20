@@ -30,17 +30,4 @@ class Location:
         return x1, y1
 
 
-# fig = plt.figure()
-# ax = host_subplot(111, axes_class=Axes)
-#
-# ax.set_autoscale_on(True)
-#
-# latitude1, longitude1 = 20, 10 # type: (float, float)
-# ax.plot(latitude1, longitude1, 'ro')
-#
-# location = Location(latitude1, longitude1)
-#
-# for i in range(1, 1000):
-#     x, y = location.get_random_point(500)
-#     ax.plot(x, y, 'bo')
-# plt.show()
+
