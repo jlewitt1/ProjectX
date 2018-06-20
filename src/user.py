@@ -4,25 +4,16 @@ import matplotlib.pyplot as plt
 import numpy as np
 from mpl_toolkits.axes_grid1 import host_subplot
 from mpl_toolkits.axisartist import Axes
-from model import generate_data
 
 
 class User:
     def __init__(self, config):
-        self.start_loc = [0, 0]
+        self.start_loc = [43.733, -73.26]
         self.end_loc = self.start_loc
         self.distance = 10
         # self.startLoc = config[0]
         # self.endLoc = config[1]
         # self.distance = config[2]
-
-    def find_hottest_point(self):
-        hot_point = hottest_point(self.start_loc)
-
-
-
-
-
 
     def process_user_setting(self):
         location = Location(self.start_loc[0], self.start_loc[1])
@@ -37,7 +28,7 @@ class User:
         location = Location(latitude1, longitude1)
 
         for i in range(1, 2):
-            x, y = location.get_random_point(self.distance*.4)
+            x, y = location.find_hottest_point()
             print(x, y)
             ax.plot(x, y, 'bo')
         plt.show()
