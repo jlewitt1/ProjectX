@@ -13,7 +13,8 @@ def index():
 @route("/newroute", method='POST')
 def handle_route_request():
     user_preferences = request.POST.get('userPreferences')
-    return json.dumps(process_user_setting(user_preferences))#returns to js
+
+    return json.dumps(process_user_setting(user_preferences))  # returns to js
 
 
 @route('/resources/js/<filename:re:.*\.js>', method='GET')
@@ -32,7 +33,6 @@ def images(filename):
 
 
 def main():
-    import os
     run(host="localhost", port=7000)
 
 
