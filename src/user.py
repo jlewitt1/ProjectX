@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from mpl_toolkits.axes_grid1 import host_subplot
 from mpl_toolkits.axisartist import Axes
+from model import generate_data
 
 
 class User:
@@ -14,6 +15,14 @@ class User:
         # self.startLoc = config[0]
         # self.endLoc = config[1]
         # self.distance = config[2]
+
+    def find_hottest_point(self):
+        hot_point = hottest_point(self.start_loc)
+
+
+
+
+
 
     def process_user_setting(self):
         location = Location(self.start_loc[0], self.start_loc[1])
