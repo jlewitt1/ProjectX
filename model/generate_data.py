@@ -80,12 +80,12 @@ def convert_to_sql(df, table_name):
     df.to_sql(table_name, con=DISK_ENGINE, if_exists='replace', index=False)
     # print (df)
 
-
-def query_data():
-    sql = '''select * from routes limit 20'''
-    conn = DISK_ENGINE.connect()
-    df = pd.read_sql_query(sql, con=conn)
-    print (df)
+#
+# def query_data():
+#     sql = '''select * from routes limit 20'''
+#     conn = DISK_ENGINE.connect()
+#     df = pd.read_sql_query(sql, con=conn)
+#     print (df)
 
 
 def hottest_point(starting_location):

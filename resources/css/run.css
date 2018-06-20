@@ -9,12 +9,25 @@ body{
     font-family: Monospaced;
     font-size:71;
     bottom: 0;
+    margin-left: 10%;
+    text-shadow: 2px 2px black;
     color: darkgreen;
+}
+.logo{
+    height: 72%;
+    width:20%;
+    margin-top:2.5%;
+}
+
+.output{
+    text-shadow: 1px 2px black;
 }
 .main-container{
     display: flex;
     position: relative;
     top:20%;
+    height: 94%;
+    border-bottom: 2px solid black;
 }
 .header-container{
     position: absolute;
@@ -22,15 +35,23 @@ body{
     width:100%;
     border: 1px solid black;
     box-sizing: border-box;
+    display: flex;
 }
 .header-content{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 100%;
     width:80%;
     float: right;
     box-sizing: border-box;
 }
+
+.media{
+    display: flex;
+    justify-content: space-around;
+}
+
 .header-logo{
     width:20%;
     background: black;
@@ -70,6 +91,7 @@ body{
   background: -ms-linear-gradient(top,  #d5d5d5 0%,#f3f3f3 80%,#feffff 100%); /* IE10+ */
   background: linear-gradient(to bottom,  #d5d5d5 0%,#f3f3f3 80%,#feffff 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d5d5d5', endColorstr='#feffff',GradientType=0 ); /* IE6-9 */
+  overflow: hidden;
   }
 
   #map {
@@ -89,17 +111,41 @@ body{
       margin-bottom:10%;
   }
   .btn-primary:hover{
+      box-shadow: 1px 2px black;
     background: rgb(0, 100, 0);
     border-color: rgba(0,50,0,1)
 
  }
 .btn-primary{
+    box-shadow: 1px 2px black;
     background: rgb(0, 138, 0);
     border-color: rgba(0,88,0,1)
 }
 
+.footer{
+    position: absolute;
+    bottom: 0;
+    width:100%;
+    height: 5%;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
 
+.footer .fa{
+    font-size: 26px;
+    float:right;
+}
 
+.social{
+    margin-right:4%;
+    cursor: pointer;
+}
+.log-in{
+    width:15%;
+    height: 26%;
+    margin-top: 2%;
+    margin-right:3%;
+}
   /* #############range things */
   label[for=range] {
   height: 49px;

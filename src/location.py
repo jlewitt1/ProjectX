@@ -2,12 +2,18 @@ import matplotlib.pyplot as plt
 import numpy as np
 from mpl_toolkits.axes_grid1 import host_subplot
 from mpl_toolkits.axisartist import Axes
+from model import generate_data
 
 
 class Location:
     def __init__(self, x0, y0):
         self.x0 = x0
         self.y0 = y0
+
+    def find_hottest_point(self):
+        location = [self.x0, self.y0]
+        hot_point_data = generate_data.hottest_point(location)
+        return hot_point_data
 
     def get_random_point(self, radius):
         a = self.x0
@@ -25,9 +31,6 @@ class Location:
         y_min = b - y_delta
         y_range = y_max - y_min
 
-        y1 = y_min + np.random.uniform(0, 1)*y_range
+        y1 = y_min + np.random.uniform(0, 1) * y_range
 
         return x1, y1
-
-
-
