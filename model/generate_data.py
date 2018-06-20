@@ -6,6 +6,7 @@ import glob
 import gmplot
 from sqlalchemy import create_engine
 import pymysql
+import numpy as np
 
 pymysql.install_as_MySQLdb()
 # API_KEY = 'AIzaSyC34UXx4v-s8keP7i2yM7V5B0J58ra7gDo'
@@ -84,11 +85,52 @@ def query_data():
     df = pd.read_sql_query(sql, con=conn)
     print (df)
 
+# user_settings = [{'start_point':41}, {}, {}]
+# user_settings[0].startLocation
+
+
+def hottest_point(starting_location):
+    df = generate_coords()
+    lon1 = df.lng
+    lat1 = df.lat
+    lon2 = starting_location[0]
+    lat2 = starting_location[1]
+
+    df['dist'] = haversine_np(lon1,lat1,lon2,lat2)
+
+    min_lat = df.iloc[df['dist'].idxmin()][0]
+    min_lng = df.iloc[df['dist'].idxmin()][1]
+
+    # print (min_lat, min_lng)
+    return min_lat, min_lng
+
+
+def haversine_np(lon1, lat1, lon2, lat2):
+    """
+    Calculate the great circle distance between two points
+    on the earth (specified in decimal degrees)
+
+    All args must be of equal length.
+
+    """
+    lon1, lat1, lon2, lat2 = map(np.radians, [lon1, lat1, lon2, lat2])
+
+    dlon = lon2 - lon1
+    dlat = lat2 - lat1
+
+    a = np.sin(dlat / 2.0) ** 2 + np.cos(lat1) * np.cos(lat2) * np.sin(dlon / 2.0) ** 2
+
+    c = 2 * np.arcsin(np.sqrt(a))
+    km = 6367 * c
+
+    return km
+
 
 def main():
    generate_coords()
-   generate_routes()
-   query_data()
+   # generate_routes()
+   # query_data()
+   hottest_point([44.764876, -78.973351])
 
 
 if __name__ == '__main__':
