@@ -4,7 +4,7 @@ This is the server side for GreenPath
 
 from bottle import route, run, get, template, static_file, request, response, debug
 import json
-from src.user import User
+# from src.user import User
 
 
 @get("/")
