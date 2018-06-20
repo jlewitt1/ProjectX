@@ -1,8 +1,41 @@
 GreenPath = {};
 
+$('#submit').click(function() {
+    GreenPath.calculateRoute();
+});
+
+GreenPath.calculateRoute = () => {
+    console.log("submit clicked");
+    let userSettings = {
+        startLocation: [10, 10],
+        endLocation: [20,20],
+        distance: 15
+    }
+    userSettings.startLocation = $('#start').val()
+    userSettings.endLocation = $('#end').val()
+    userSettings.distance = $('#range').val()
+    
+    $.post("/newroute", { "userPreferences": JSON.stringify(userSettings) }, function (result) {
+        if (result["STATUS"] == "ERROR") {
+            alert(result["MSG"]);
+        } else {
+            console.log(JSON.stringify(result));
+            // GreenPath.updateRouteParameters(result["WAYPOINTS"]);
+        }
+    }, "json");
+    return false;
+}
+
 // **************** Map Route Display *******************
-GreenPath.updateRouteParameters = () => {
-    GreenPath.waypts = [{ location: "chicago, il", stopover: true }, { location: "st louis, mo", stopover: true }];
+
+GreenPath.updateRouteParameters = (waypointArray) => {
+    for (let waypt in waypointArray) {
+        GreenPath.waypts.push({
+            location: new google.maps.LatLng(waypt.latitude, waypt.longitude),
+            stopover: true
+        });
+    }
+    // GreenPath.waypts = [{ location: "chicago, il", stopover: true }, { location: "st louis, mo", stopover: true }];
     GreenPath.startPoint = document.getElementById('start').value;
     GreenPath.endPoint = document.getElementById('end').value;
 }

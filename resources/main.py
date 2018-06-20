@@ -15,8 +15,12 @@ def index():
 @route("/newroute", method='POST')
 def handle_route_request():
     user_preferences = request.POST.get('userPreferences')
-    user = User(user_preferences)
-    return json.dumps(user.process_user_setting(user_preferences))  # returns to js
+    #print(json.dumps(user_preferences))
+    #user = User(user_preferences)
+    reply = {}
+    reply["STATUS"] = "SUCCESS"
+    reply["MSG"] = user_preferences
+    return json.dumps(reply) #json.dumps(user.process_user_setting(user_preferences))  # returns to js
 
 
 @route('/js/<filename:re:.*\.js>', method='GET')

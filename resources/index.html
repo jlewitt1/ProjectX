@@ -12,111 +12,90 @@
 </head>
 
 <body>
+    <div class="header-container">
+        <span class="header-logo">LOGO</span>
+        <span class="header-content">
+                <span class="title">Green Run</span>
+                <span>
+                    <span>contact-us</span>
+                    <span>login</span>
+                    <div>logos</div>
+                </span>
+        </span>
+            
+    </div>
     <div class="main-container">
+
         <div class="menu-container">
+            <!-- start and end points -->
+            <div>
+                <div class="start-point">
+                    <select id="start" class="btn btn-primary">
+                        <option selected disabled value="chicago, il">Start Point</option>
+                        <option value="chicago, il">Chicago</option>
+                        <option value="st louis, mo">St Louis</option>
+                        <option value="joplin, mo">Joplin, MO</option>
+                        <option value="oklahoma city, ok">Oklahoma City</option>
+                        <option value="amarillo, tx">Amarillo</option>
+                        <option value="gallup, nm">Gallup, NM</option>
+                        <option value="flagstaff, az">Flagstaff, AZ</option>
+                        <option value="winona, az">Winona</option>
+                        <option value="kingman, az">Kingman</option>
+                        <option value="barstow, ca">Barstow</option>
+                        <option value="san bernardino, ca">San Bernardino</option>
+                        <option value="los angeles, ca">Los Angeles</option>
+                    </select>
+                </div>
+                <div class="end-point">
+                    <select id="end" class="btn btn-primary">
+                        <option selected disabled value="chicago, il">End Point</option>
+                        <option value="chicago, il">Chicago</option>
+                        <option value="st louis, mo">St Louis</option>
+                        <option value="joplin, mo">Joplin, MO</option>
+                        <option value="oklahoma city, ok">Oklahoma City</option>
+                        <option value="amarillo, tx">Amarillo</option>
+                        <option value="gallup, nm">Gallup, NM</option>
+                        <option value="flagstaff, az">Flagstaff, AZ</option>
+                        <option value="winona, az">Winona</option>
+                        <option value="kingman, az">Kingman</option>
+                        <option value="barstow, ca">Barstow</option>
+                        <option value="san bernardino, ca">San Bernardino</option>
+                        <option value="los angeles, ca">Los Angeles</option>
+                    </select>
+                </div>
+            </div>
             <!-- dropdown -->
-            <div class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <li>
-                        <a href="#">Beach</a>
-                    </li>
-                    <li>
-                        <a href="#">CSS</a>
-                    </li>
-                    <li>
-                        <a href="#">JavaScript</a>
-                    </li>
-                </ul>
+            <div class="terrain">
+                <select class="btn btn-primary">
+                    <option disabled selected value="">Choose Terrain</option>
+                    <option value="">Road</option>
+                    <option value="">Beach</option>
+                    <option value="">Rain Foreset</option>
+                    <option value="">Rail Road</option>
+                </select>
             </div>
             <!-- range bar -->
-            <label for="range">
-                <input type="range" name="range" id="range" min="1" max="32" step="0.5" value="1" />
-            </label>
-            <output for="range" class="output"></output>
-            <div class="submit btn btn-primary">GreenRun</div>
+            <div>
+                <label for="range">
+                    <input type="range" name="range" id="range" min="1" max="32" step="0.5" value="1" />
+                </label>
+                <output for="range" class="output"></output>
+                <button id="submit" class="btn btn-primary">Get route!</button>
+            </div>
 
         </div>
         <div class="map-container">
             <div class="the-map">
-                    <div id="floating-panel">
-                            <b>Start: </b>
-                            <select id="start">
-                              <option value="chicago, il">Chicago</option>
-                              <option value="st louis, mo">St Louis</option>
-                              <option value="joplin, mo">Joplin, MO</option>
-                              <option value="oklahoma city, ok">Oklahoma City</option>
-                              <option value="amarillo, tx">Amarillo</option>
-                              <option value="gallup, nm">Gallup, NM</option>
-                              <option value="flagstaff, az">Flagstaff, AZ</option>
-                              <option value="winona, az">Winona</option>
-                              <option value="kingman, az">Kingman</option>
-                              <option value="barstow, ca">Barstow</option>
-                              <option value="san bernardino, ca">San Bernardino</option>
-                              <option value="los angeles, ca">Los Angeles</option>
-                            </select>
-                            <b>End: </b>
-                            <select id="end">
-                              <option value="chicago, il">Chicago</option>
-                              <option value="st louis, mo">St Louis</option>
-                              <option value="joplin, mo">Joplin, MO</option>
-                              <option value="oklahoma city, ok">Oklahoma City</option>
-                              <option value="amarillo, tx">Amarillo</option>
-                              <option value="gallup, nm">Gallup, NM</option>
-                              <option value="flagstaff, az">Flagstaff, AZ</option>
-                              <option value="winona, az">Winona</option>
-                              <option value="kingman, az">Kingman</option>
-                              <option value="barstow, ca">Barstow</option>
-                              <option value="san bernardino, ca">San Bernardino</option>
-                              <option value="los angeles, ca">Los Angeles</option>
-                            </select>
-                            </div>
-                            <div id="map"></div>
+
+                <div id="map"></div>
             </div>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./js/run.js"></script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC34UXx4v-s8keP7i2yM7V5B0J58ra7gDo&callback=initMap">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC34UXx4v-s8keP7i2yM7V5B0J58ra7gDo&callback=initMap">
     </script>
     <script src="./js/routeGod.js"></script>
 </body>
 
 </html>
-
-<!-- ................... -->
-<!-- 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <title>RouteGod</title>
-    <style>
-      #map {
-        height: 100%;
-      }
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #floating-panel {
-        position: absolute;
-        top: 10px;
-        left: 25%;
-        z-index: 5;
-        background-color: #fff;
-        padding: 5px;
-        border: 1px solid #999;
-        text-align: center;
-        font-family: 'Roboto','sans-serif';
-        line-height: 30px;
-        padding-left: 10px;
-      }
-    </style>
-  </head>
-  <body>
