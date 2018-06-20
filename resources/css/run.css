@@ -1,15 +1,45 @@
-
+h1{
+    margin:0;
+}
 body{
     text-align:center;
 }
-    
+
+.title{
+    font-family: Monospaced;
+    font-size:71;
+    bottom: 0;
+    color: darkgreen;
+}
 .main-container{
     display: flex;
+    position: relative;
+    top:20%;
+}
+.header-container{
+    position: absolute;
+    height: 20%;
+    width:100%;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+.header-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:80%;
+    float: right;
+    box-sizing: border-box;
+}
+.header-logo{
+    width:20%;
+    background: black;
+    box-sizing: border-box;
 }
 .menu-container{
     border: 1px solid black;
-    height: 100%;
-    width: 30%;
+    height: 80%;
+    width: 20%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -18,8 +48,8 @@ body{
 }
 .map-container{
     border: 1px solid black;
-    height: 100%;
-    width: 70%;
+    height: 80%;
+    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,12 +57,12 @@ body{
 
 .the-map{
     border: 1px solid black;
-    height: 60%;
-    width: 60%;   
+    height: 100%;
+    width: 100%;   
 }
 body{
-    text-align:center;
-   background: #d5d5d5; /* Old browsers */
+  text-align:center;
+  background: #d5d5d5; /* Old browsers */
   background: -moz-linear-gradient(top,  #d5d5d5 0%, #f3f3f3 80%, #feffff 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d5d5d5), color-stop(80%,#f3f3f3), color-stop(100%,#feffff)); /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top,  #d5d5d5 0%,#f3f3f3 80%,#feffff 100%); /* Chrome10+,Safari5.1+ */
@@ -45,31 +75,35 @@ body{
   #map {
     height: 100%;
   }
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+
+  .start-point{
+      margin-bottom: 3%;
   }
-  #floating-panel {
-    position: absolute;
-    top: 10px;
-    left: 25%;
-    z-index: 5;
-    background-color: #fff;
-    padding: 5px;
-    border: 1px solid #999;
-    text-align: center;
-    font-family: 'Roboto','sans-serif';
-    line-height: 30px;
-    padding-left: 10px;
+
+  .end-point{
+    margin-bottom: 3%;
   }
+
+  #submit{
+      margin-bottom:10%;
+  }
+  .btn-primary:hover{
+    background: rgb(0, 100, 0);
+    border-color: rgba(0,50,0,1)
+
+ }
+.btn-primary{
+    background: rgb(0, 138, 0);
+    border-color: rgba(0,88,0,1)
+}
+
 
 
   /* #############range things */
   label[for=range] {
   height: 49px;
   padding-top: 6px;
-  width: 350px;
+  width: 100%;
   padding-left: 13px;
   -webkit-transform: skew(-62deg);
   overflow: hidden;
@@ -81,14 +115,16 @@ body{
   bottom: 11px;
   left: 69px;
   height: 9px;
-  width: 278px;
+  /* width: 278px; */
+  width: 100%;
   box-shadow: 0px 3px 10px -3px rgba(0, 0, 0, 0.51);
-  -webkit-transform: skew(62deg);
+  /* -webkit-transform: skew(62deg); */
   }
   input[type=range] {
   -webkit-appearance: none;
   background-color: transparent;
-  width: 300px;
+  width: 100%;
+  /* width: 300px; */
   height: 38px;
     padding-top:10px;
     overflow:hidden;
@@ -126,7 +162,8 @@ body{
   z-index: 1;
   left: -285px;
   top: -28px;
-  width: 300px;
+  /* width: 300px; */
+  width: 100%;
   height: 140px;
   background: #9FE472;
   transform: rotateX(90deg);
@@ -163,7 +200,8 @@ body{
   content: "";
   position: absolute;
   height: 38px;
-  width: 283px;
+  /* width: 283px; */
+  width: 100%;
   background: #e8e8e8;
   background: -moz-linear-gradient(top, #dfdfdf 0%, #d8d8d8 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dfdfdf), color-stop(100%,#d8d8d8));
