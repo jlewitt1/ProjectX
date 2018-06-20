@@ -85,10 +85,6 @@ def query_data():
     df = pd.read_sql_query(sql, con=conn)
     print (df)
 
-# user_settings = [{'start_point':41}, {}, {}]
-# user_settings[0].startLocation
-
-
 def hottest_point(starting_location):
     df = generate_coords()
     lon1 = df.lng
