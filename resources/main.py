@@ -15,7 +15,8 @@ def index():
 @route("/newroute", method='POST')
 def handle_route_request():
     user_preferences = request.POST.get('userPreferences')
-    #print(json.dumps(user_preferences))
+    user_preferences = json.loads(user_preferences)
+    print (user_preferences['startLocation'])
     #user = User(user_preferences)
     reply = {}
     reply["STATUS"] = "SUCCESS"
