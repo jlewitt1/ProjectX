@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" id="theme" type="text/css" href="./css/run.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="menu-container">
+            <!-- dropdown -->
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="#">HTML</a>
+                    </li>
+                    <li>
+                        <a href="#">CSS</a>
+                    </li>
+                    <li>
+                        <a href="#">JavaScript</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- range bar -->
+            <label for="range">
+                <input type="range" name="range" id="range" min="1" max="32" step="0.5" value="1" />
+            </label>
+            <output for="range" class="output"></output>
+            <div class="submit btn btn-primary">GreenRun</div>
+
+        </div>
+        <div class="map-container">
+            <div class="the-map"></div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./js/run.js"></script>
+</body>
+
+</html>
