@@ -16,7 +16,6 @@ DISK_ENGINE = create_engine('mysql+mysqldb://{user}:{pwd}@localhost/running'.for
 
 
 def generate_coords():
-
     path = '../data/runs_coords/'
     all_files = glob.glob(path + "/*.gpx")
 
@@ -33,12 +32,12 @@ def generate_coords():
                 for point in segment.points:
                     lat = point.latitude
                     lng = point.longitude
-                    listing_coords.extend([lat,lng])
+                    listing_coords.extend([lat, lng])
                     df1 = pd.DataFrame(listing_coords)
                     df1.columns = ['lat']
-                    df2 = pd.DataFrame({'lat' : df1.lat.values[::2], 'lng' : df1.lat.values[1::2]})
+                    df2 = pd.DataFrame({'lat': df1.lat.values[::2], 'lng': df1.lat.values[1::2]})
                     df2['run_id'] = run_id
-            df_coords = df_coords.append(df2,ignore_index=True)
+            df_coords = df_coords.append(df2, ignore_index=True)
 
     # add manually for now - geolocator service errors
     # df_coords['location'] = df_coords['coords'].apply(lambda location_geo: geolocator.reverse(location_geo))
@@ -49,15 +48,15 @@ def generate_coords():
 
     return df_coords
 
-def generate_routes():
 
+def generate_routes():
     path = '../data/runs_data/'
 
     all_files = glob.glob(path + "/*.csv")
     df_routes = pd.DataFrame()
     list_ = []
     for file_path in all_files:
-        df = pd.read_csv(file_path,index_col=None, header=0)
+        df = pd.read_csv(file_path, index_col=None, header=0)
         run_id = os.path.basename(file_path)[6:-4]
         df['run_id'] = run_id
         list_.append(df)
@@ -68,22 +67,26 @@ def generate_routes():
     convert_to_sql(df_routes, 'routes')
     return df_routes
 
+
 def generate_heat_map(df_coords):
-    #center in Central Park
+    # center in Central Park
     gmap = gmplot.GoogleMapPlotter(40.7829, -73.9654, 12)
     gmap.heatmap(df_coords['lat'], df_coords['lng'])
     gmap.draw("nyc_heatmap.html")
+
 
 def convert_to_sql(df, table_name):
     # disk_engine = create_engine('mysql+mysqldb://Josh:123@localhost/running')
     df.to_sql(table_name, con=DISK_ENGINE, if_exists='replace', index=False)
     # print (df)
 
+
 def query_data():
     sql = '''select * from routes limit 20'''
     conn = DISK_ENGINE.connect()
     df = pd.read_sql_query(sql, con=conn)
     print (df)
+
 
 def hottest_point(starting_location):
     df = generate_coords()
@@ -92,7 +95,7 @@ def hottest_point(starting_location):
     lon2 = starting_location[0]
     lat2 = starting_location[1]
 
-    df['dist'] = haversine_np(lon1,lat1,lon2,lat2)
+    df['dist'] = haversine_np(lon1, lat1, lon2, lat2)
 
     min_lat = df.iloc[df['dist'].idxmin()][0]
     min_lng = df.iloc[df['dist'].idxmin()][1]
@@ -123,13 +126,11 @@ def haversine_np(lon1, lat1, lon2, lat2):
 
 
 def main():
-   generate_coords()
-   # generate_routes()
-   # query_data()
-   hottest_point([44.764876, -78.973351])
+    generate_coords()
+    # generate_routes()
+    # query_data()
+    hottest_point([44.764876, -78.973351])
 
 
 if __name__ == '__main__':
     main()
-
-
