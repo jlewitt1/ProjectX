@@ -10,6 +10,12 @@ def index():
     return template("index.html")
 
 
+@route("/newroute", method='POST')
+def handle_route_request():
+    user_preferences = request.POST.get('userPreferences')
+    return json.dumps(process_user_setting(user_preferences))#returns to js
+
+
 @route('/resources/js/<filename:re:.*\.js>', method='GET')
 def javascripts(filename):
     return static_file(filename, root='js')
