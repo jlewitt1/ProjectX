@@ -8,12 +8,12 @@ from mpl_toolkits.axisartist import Axes
 
 class User:
     def __init__(self, config):
-        self.start_loc = [40.7829, -73.9654]
-        self.end_loc = self.start_loc
-        self.distance = 10
-        # self.startLoc = config[0]
-        # self.endLoc = config[1]
-        # self.distance = config[2]
+        # self.start_loc = [40.7829, -73.9654]
+        # self.end_loc = self.start_loc
+        # self.distance = 10
+        self.startLoc = config['startLocation']
+        self.endLoc = self.startLoc
+        self.distance = config['distance']
 
     def process_user_setting(self):
         location = Location(self.start_loc[0], self.start_loc[1])
@@ -27,11 +27,12 @@ class User:
 
         location = Location(latitude1, longitude1)
 
-        for i in range(1, 2):
-            x, y = location.find_hottest_point()
+        for i in range(1, 10):
+            x, y, dist = location.find_hottest_point()
             print(x, y)
             ax.plot(x, y, 'bo')
         plt.show()
+        return x, y
 
 
 config = 0

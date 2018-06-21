@@ -117,10 +117,10 @@ def hottest_point(starting_location):
 def coords_distance(lat1, lng1, lat2, lng2):
 
     origins = str(lat1) + ',' + str(lng1)
-    print (origins)
+    print ("origins=" + origins)
     destination = str(lat2) + "," + str(lng2)
     payload = {'units': 'metric', 'origins': origins, 'destination': destination, 'key':API_KEY}
-    r= requests.get('https://maps.googleapis.com/maps/api/distancematrix/json', params=payload)
+    r = requests.get('https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&'+'origins=' + origins + '&destinations=' + destination + '&key=' + API_KEY)
     print(r.url)
 
     return distance
