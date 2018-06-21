@@ -34,8 +34,8 @@
             <div>
                 <div class="start-point">
                     <select id="start" class="btn btn-primary">
-                        <option selected disabled value="chicago, il">Start Point</option>
-                        <option value="[40.7829, -73.9654]">Central Park</option>
+                        <option selected disabled value='{ "lat": 40.7829, "lng": -73.9654 }'>Start Point</option>
+                        <option value='{ "lat": 40.7829, "lng": -73.9654 }'>Central Park</option>
                         <option value="st louis, mo">St Louis</option>
                         <option value="joplin, mo">Joplin, MO</option>
                         <option value="oklahoma city, ok">Oklahoma City</option>
@@ -51,7 +51,7 @@
                 </div>
                 <div class="end-point">
                     <select id="end" class="btn btn-primary">
-                        <option selected disabled value="chicago, il">End Point</option>
+                        <option selected disabled value='{ "lat": 40.7829, "lng": -73.9654 }'>End Point</option>
                         <option value="chicago, il">Chicago</option>
                         <option value="st louis, mo">St Louis</option>
                         <option value="joplin, mo">Joplin, MO</option>
@@ -101,21 +101,6 @@
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC34UXx4v-s8keP7i2yM7V5B0J58ra7gDo&callback=initMap">
     </script>
     <script src="./js/routeGod.js"></script>
-
-    <div class="login-screen">
-        <div class="login-form">
-            <span onClick="hide()" class="glyphicon glyphicon-remove"></span>
-            <h3>Log In</h3>
-            <input placeholder="Username" type="text">
-            <input type="password" placeholder="password" type="text">
-            <div>
-                <button class="btn btn-primary" onclick="hide()">Run</button>
-            </div>
-            <div class="forgot">Forgot my password</div>
-            <h3 class="sign-up btn btn-primary">Sign Up</h3>
-        </div>
-
-    </div>
 </body>
 
 </html>

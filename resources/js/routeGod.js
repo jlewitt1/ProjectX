@@ -43,8 +43,10 @@ GreenPath.updateRouteParameters = (waypointArray) => {
         });
     }
     console.log("this is waypoints: " + JSON.stringify(GreenPath.waypts));
-    GreenPath.startPoint = document.getElementById('start').value;
-    GreenPath.endPoint = document.getElementById('end').value;
+    GreenPath.startPoint = JSON.parse(document.getElementById('start').value);
+    console.log("startpoint type:" + typeof GreenPath.startPoint);
+    GreenPath.endPoint = JSON.parse(document.getElementById('end').value);
+    console.log("endpoint type:" + typeof GreenPath.endPoint);
 }
 
 initMap = () => {
