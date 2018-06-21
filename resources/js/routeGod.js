@@ -6,7 +6,6 @@ $('#submit').click(function() {
 });
 
 GreenPath.calculateRoute = () => {
-    console.log("submit clicked");
     let userSettings = {}
     userSettings.startLocation = $('#start').val()
     userSettings.endLocation = $('#end').val()
@@ -41,8 +40,6 @@ GreenPath.updateRouteParameters = (waypointArray) => {
     console.log("this is waypoints: " + JSON.stringify(GreenPath.waypts));
     GreenPath.startPoint = document.getElementById('start').value;
     GreenPath.endPoint = document.getElementById('end').value;
-    // var directionsService = new google.maps.DirectionsService;
-    // var directionsDisplay = new google.maps.DirectionsRenderer;
 }
 
 initMap = () => {
@@ -76,7 +73,7 @@ GreenPath.displayRouteOnMap = (directionsService, directionsDisplay) => {
         destination: GreenPath.endPoint,
         travelMode: 'WALKING',
         waypoints: GreenPath.waypts,
-        // waypoints: [{location:{ lat: 41.85, lng: -87.65 }, stopover:true}],
+        //waypoints: [{location:{ lat: 41.85, lng: -87.65 }, stopover:true}],
         optimizeWaypoints: false
     }, function (response, status) {
         if (status === 'OK') {
