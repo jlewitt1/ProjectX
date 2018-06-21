@@ -7,9 +7,17 @@ import gmplot
 from sqlalchemy import create_engine
 import pymysql
 import numpy as np
+import geopy.distance
+import requests
+from requests.auth import HTTPDigestAuth
+import json
+from geopy import distance
+import math
+import urllib
+
 
 pymysql.install_as_MySQLdb()
-# API_KEY = 'AIzaSyC34UXx4v-s8keP7i2yM7V5B0J58ra7gDo'
+API_KEY = 'AIzaSyC34UXx4v-s8keP7i2yM7V5B0J58ra7gDo'
 SQL_USER = 'Josh'
 SQL_PWD = 123
 DISK_ENGINE = create_engine('mysql+mysqldb://{user}:{pwd}@localhost/running'.format(user=SQL_USER, pwd=SQL_PWD))
@@ -44,7 +52,7 @@ def generate_coords():
     df_coords['city'] = 'NYC'
 
     generate_heat_map(df_coords)
-    convert_to_sql(df_coords, 'coordinates')
+    # convert_to_sql(df_coords, 'coordinates')
 
     return df_coords
 
@@ -64,7 +72,7 @@ def generate_routes():
 
     df_routes.run_id.unique()
 
-    convert_to_sql(df_routes, 'routes')
+    # convert_to_sql(df_routes, 'routes')
     return df_routes
 
 
@@ -75,10 +83,10 @@ def generate_heat_map(df_coords):
     gmap.draw("nyc_heatmap.html")
 
 
-def convert_to_sql(df, table_name):
-    # disk_engine = create_engine('mysql+mysqldb://Josh:123@localhost/running')
-    df.to_sql(table_name, con=DISK_ENGINE, if_exists='replace', index=False)
-    # print (df)
+# def convert_to_sql(df, table_name):
+#     # disk_engine = create_engine('mysql+mysqldb://Josh:123@localhost/running')
+#     df.to_sql(table_name, con=DISK_ENGINE, if_exists='replace', index=False)
+#     # print (df)
 
 #
 # def query_data():
@@ -87,49 +95,41 @@ def convert_to_sql(df, table_name):
 #     df = pd.read_sql_query(sql, con=conn)
 #     print (df)
 
-
 def hottest_point(starting_location):
     df = generate_coords()
-    lon1 = df.lng
-    lat1 = df.lat
-    lon2 = starting_location[0]
-    lat2 = starting_location[1]
+    lat = np.array(df.lat)
+    lng = np.array(df.lng)
+    coords = np.c_[lat, lng]
 
-    df['dist'] = haversine_np(lon1, lat1, lon2, lat2)
+    distances = []
+    for i in coords:
+        distances.append(distance.distance(i, starting_location).km)
 
-    min_lat = df.iloc[df['dist'].idxmin()][0]
-    min_lng = df.iloc[df['dist'].idxmin()][1]
+    min_coords = coords[distances.index(np.min(distances))]
+    print (min_coords)
+    min_lat = min_coords[0]
+    min_lng = min_coords[1]
 
-    # print (min_lat, min_lng)
+    coords_distance(min_lat, min_lng, starting_location[0],starting_location[1])
     return min_lat, min_lng
 
 
-def haversine_np(lon1, lat1, lon2, lat2):
-    """
-    Calculate the great circle distance between two points
-    on the earth (specified in decimal degrees)
+def coords_distance(lat1, lng1, lat2, lng2):
 
-    All args must be of equal length.
+    origins = str(lat1) + ',' + str(lng1)
+    print ("origins=" + origins)
+    destination = str(lat2) + "," + str(lng2)
+    payload = {'units': 'metric', 'origins': origins, 'destination': destination, 'key':API_KEY}
+    r = requests.get('https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&'+'origins=' + origins + '&destinations=' + destination + '&key=' + API_KEY)
+    print(r.url)
 
-    """
-    lon1, lat1, lon2, lat2 = map(np.radians, [lon1, lat1, lon2, lat2])
-
-    dlon = lon2 - lon1
-    dlat = lat2 - lat1
-
-    a = np.sin(dlat / 2.0) ** 2 + np.cos(lat1) * np.cos(lat2) * np.sin(dlon / 2.0) ** 2
-
-    c = 2 * np.arcsin(np.sqrt(a))
-    km = 6367 * c
-
-    return km
-
+    return distance
 
 def main():
     generate_coords()
-    # generate_routes()
+    generate_routes()
     # query_data()
-    hottest_point([44.764876, -78.973351])
+    hottest_point([40.12323, -73.923])
 
 
 if __name__ == '__main__':
