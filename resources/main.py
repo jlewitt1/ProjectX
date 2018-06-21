@@ -24,6 +24,7 @@ def handle_route_request():
     coordinates = user.process_user_setting()
     #reply["WAYPOINTS"] = [{"latitude": 43.733, "longitude": -73.26}, {"latitude": 43.133, "longitude": -73.96}]
     reply["WAYPOINTS"] = [{"latitude": coordinates[0], "longitude": coordinates[1]}]
+    print(reply["WAYPOINTS"])
     return json.dumps(reply)
 
 

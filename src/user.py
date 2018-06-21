@@ -11,8 +11,8 @@ class User:
         # self.start_loc = [40.7829, -73.9654]
         # self.end_loc = self.start_loc
         # self.distance = 10
-        self.startLoc = config['startLocation']
-        self.endLoc = self.startLoc
+        self.start_loc = config['startLocation']
+        self.end_loc = self.start_loc
         self.distance = config['distance']
 
     def process_user_setting(self):
@@ -35,6 +35,6 @@ class User:
         return x, y
 
 
-config = 0
-user = User(config)
-user.process_user_setting()
+# config = 0
+# user = User(config)
+# user.process_user_setting()
