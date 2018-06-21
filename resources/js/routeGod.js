@@ -24,6 +24,7 @@ GreenPath.calculateRoute = () => {
             directionArr = GreenPath.mapStarter();
             directionsService =  directionArr[0];
             directionsDisplay =  directionArr[1];
+            console.log(GreenPath.startPoint, GreenPath.endPoint ,GreenPath.waypts)
             GreenPath.displayRouteOnMap(directionsService, directionsDisplay);
 
         }
