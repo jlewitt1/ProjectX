@@ -10,7 +10,6 @@ body{
     font-size:71;
     bottom: 0;
     margin-left: 10%;
-    text-shadow: 2px 2px black;
     color: darkgreen;
 }
 .logo{
@@ -133,7 +132,7 @@ body{
 .footer .fa:hover{
     opacity: 0.8;
 }
-The joy was in the act of running and in the journey, not in the destination.” John Bingham #
+/* The joy was in the act of running and in the journey, not in the destination.” John Bingham #
 dont stop when you are tired, stop when youre done!
 if it doesnt challenge you it wont change you - fred deVito
 "Running allows you to set you mind free. Nothing impossible. Nothing unattainable." — Kara Goucher
@@ -158,7 +157,7 @@ Running has given me the courage to start, the determination to keep trying, and
 Runners just do it – they run for the finish line even if someone else has reached it first. Unknown
 “Pain is temporary.  It may last a minute, or an hour, or a day, or a year, but eventually it will subside and something else will take its place.  If I quit, however, it lasts forever.  Lance Armstrong
 “Running is about finding your inner peace, and so is a life well lived.” Dean Karnazes
-“Running is real and relatively simple…but it ain’t easy.”  Mark Will-Weber
+“Running is real and relatively simple…but it ain’t easy.”  Mark Will-Weber */
 
 .social{
     margin-right:4%;
@@ -350,4 +349,50 @@ Runners just do it – they run for the finish line even if someone else has rea
   text-shadow: 0px 2px black;
   }
 
+  .login-screen{
+      position: absolute;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      top:0;
+      left:0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0,0.5);
+  }
+
+  .login-form{
+    position: relative;
+    width:30%;
+    border-radius: 3px;
+    background: #dfdfdf;
+  }
+ .login-form span{
+     position: absolute;
+     top:0;
+     left:0;
+     opacity: 0.8;
+     cursor: pointer;
+ }
+.login-form input{
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+.login-form input {
+    margin-left: calc(50% - 84px);
+    display: block;
+}
+
+.forgot{
+    margin-top:15px;
+}
+.forgot:hover{
+    color:green;
+}
+.sign-up{
+    display:block;
+}
+.hidden{
+    display:flex;
+}
 
