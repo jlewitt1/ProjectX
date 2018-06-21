@@ -6,7 +6,7 @@ body{
 }
 
 .title{
-    font-family: Monospaced;
+    font-family: 'Asap', sans-serif;
     font-size:71;
     bottom: 0;
     margin-left: 10%;
@@ -14,26 +14,22 @@ body{
     color: darkgreen;
 }
 .logo{
-    height: 72%;
-    width:20%;
+    height: 50%;
+    width:10%;
+    margin-left: 5.5%;
     margin-top:2.5%;
 }
 
-.output{
-    text-shadow: 1px 2px black;
-}
 .main-container{
     display: flex;
     position: relative;
     top:20%;
     height: 94%;
-    border-bottom: 2px solid black;
 }
 .header-container{
     position: absolute;
     height: 20%;
     width:100%;
-    border: 1px solid black;
     box-sizing: border-box;
     display: flex;
 }
@@ -58,7 +54,6 @@ body{
     box-sizing: border-box;
 }
 .menu-container{
-    border: 1px solid black;
     height: 80%;
     width: 20%;
     display: flex;
@@ -68,7 +63,6 @@ body{
     justify-content: center;
 }
 .map-container{
-    border: 1px solid black;
     height: 80%;
     width: 80%;
     display: flex;
@@ -77,9 +71,9 @@ body{
 }
 
 .the-map{
-    border: 1px solid black;
-    height: 100%;
-    width: 100%;   
+    border-radius: 5px;
+    height: 98%%;
+    width: 98%;   
 }
 body{
   text-align:center;
@@ -95,6 +89,7 @@ body{
   }
 
   #map {
+    border-radius: 5px;
     height: 100%;
     width: 100%;
   }
@@ -127,14 +122,43 @@ body{
     bottom: 0;
     width:100%;
     height: 5%;
-    border: 1px solid black;
     box-sizing: border-box;
 }
 
 .footer .fa{
+    margin-right: 3%;
     font-size: 26px;
     float:right;
 }
+.footer .fa:hover{
+    opacity: 0.8;
+}
+The joy was in the act of running and in the journey, not in the destination.” John Bingham #
+dont stop when you are tired, stop when youre done!
+if it doesnt challenge you it wont change you - fred deVito
+"Running allows you to set you mind free. Nothing impossible. Nothing unattainable." — Kara Goucher
+6 OF 24ALL PHOTOS
+"A good laugh and a long run are the two best cures for anything."
+"Act like a horse. Be dumb. Just run." — Jumbo Elliot, 
+"Run often. Run long. But never outrun your joy of running." —Julie Isphording,
+"What seems hard now will one day be your warm-up." 
+"On your good days, runn hard. On your bad days, run as long as you need."
+"If you want to change your body, exercise. If you want to change your life, become a runner."
+"There is magic in misery. Just ask any runner." — Dean Karnazes
+"There will come a day when I can no longer run. Today is not that day." 
+“My feeling is that any day I am too busy to run is a day that I am too busy.”John Bryant
+Running -All it takes is all you got. Marc Davis
+It is a rough road that leads to the heights of greatness. Seneca
+Do a little more each day than you think you possibly can. Lowell Thomas
+You can throw in the towel, or you can use it to wipe the sweat off of your face. Gatorade
+If you run, you are a runner. It doesn’t matter how fast or how far. It doesn’t matter if today is your first day or if you’ve been running for twenty years. There is no test to pass, no license to earn, no membership card to get. You just run. John Bingham
+We are all runners, some just run faster than others. I never met a fake runner.” Bart Yasso
+Our greatest glory is not in never falling, but in rising every time we fall. Confucius
+Running has given me the courage to start, the determination to keep trying, and the childlike spirit to have fun along the way - Julie Isphording
+Runners just do it – they run for the finish line even if someone else has reached it first. Unknown
+“Pain is temporary.  It may last a minute, or an hour, or a day, or a year, but eventually it will subside and something else will take its place.  If I quit, however, it lasts forever.  Lance Armstrong
+“Running is about finding your inner peace, and so is a life well lived.” Dean Karnazes
+“Running is real and relatively simple…but it ain’t easy.”  Mark Will-Weber
 
 .social{
     margin-right:4%;
@@ -322,7 +346,8 @@ body{
   width: 100%;
   font-size: 2em;
   font-family: 'Advent Pro', sans-serif;
-  color: rgba(132, 206, 66, 1);
+  color: rgba(0, 100, 0, 1);
+  text-shadow: 0px 2px black;
   }
 
 
