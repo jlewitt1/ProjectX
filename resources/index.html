@@ -49,23 +49,6 @@
                         <option value="los angeles, ca">Los Angeles</option>
                     </select>
                 </div>
-                <div class="end-point">
-                    <select id="end" class="btn btn-primary">
-                        <option selected disabled value='{ "lat": 40.7829, "lng": -73.9654 }'>End Point</option>
-                        <option value="chicago, il">Chicago</option>
-                        <option value="st louis, mo">St Louis</option>
-                        <option value="joplin, mo">Joplin, MO</option>
-                        <option value="oklahoma city, ok">Oklahoma City</option>
-                        <option value="amarillo, tx">Amarillo</option>
-                        <option value="gallup, nm">Gallup, NM</option>
-                        <option value="flagstaff, az">Flagstaff, AZ</option>
-                        <option value="winona, az">Winona</option>
-                        <option value="kingman, az">Kingman</option>
-                        <option value="barstow, ca">Barstow</option>
-                        <option value="san bernardino, ca">San Bernardino</option>
-                        <option value="los angeles, ca">Los Angeles</option>
-                    </select>
-                </div>
             </div>
             <!-- dropdown -->
             <div class="terrain">
@@ -73,8 +56,7 @@
                     <option disabled selected value="">Choose Terrain</option>
                     <option value="">Road</option>
                     <option value="">Beach</option>
-                    <option value="">Rain Foreset</option>
-                    <option value="">Rail Road</option>
+                    <option value="">Park</option>
                 </select>
             </div>
             <!-- range bar -->
@@ -84,7 +66,12 @@
                 </label>
                 <output for="range" class="output"></output>
             </div>
-            <button id="submit" class="btn btn-primary">Get route!</button>
+            <button id="submit" class="btn btn-primary" onclick="cal()" >Get route!</button>
+            <div class="loader">
+                
+                <!-- <iframe src="https://giphy.com/embed/l3vQX4tXkLa1PTZ2U" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen>
+                </iframe><p><a href="https://giphy.com/gifs/trippy-run-abstract-l3vQX4tXkLa1PTZ2U">via GIPHY</a></p> -->
+            </div>
         </div>
         <div class="map-container">
             <div id="map"></div>

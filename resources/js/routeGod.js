@@ -12,7 +12,7 @@ GreenPath.calculateRoute = () => {
     // userSettings.distance = parseInt($('#range').val());
 
     userSettings.startLocation = [40.7829, -73.9654];
-    userSettings.endLocation = [40.7829, -73.9654];
+    // userSettings.endLocation = [40.7829, -73.9654];
     userSettings.distance = 15;
     
     $.post("/newroute", { "userPreferences": JSON.stringify(userSettings) }, function (result) {
@@ -26,7 +26,7 @@ GreenPath.calculateRoute = () => {
             directionsDisplay =  directionArr[1];
             console.log(GreenPath.startPoint, GreenPath.endPoint ,GreenPath.waypts)
             GreenPath.displayRouteOnMap(directionsService, directionsDisplay);
-
+            hideLoad();
         }
     }, "json");
     return false;
@@ -45,8 +45,6 @@ GreenPath.updateRouteParameters = (waypointArray) => {
     console.log("this is waypoints: " + JSON.stringify(GreenPath.waypts));
     GreenPath.startPoint = JSON.parse(document.getElementById('start').value);
     console.log("startpoint type:" + typeof GreenPath.startPoint);
-    GreenPath.endPoint = JSON.parse(document.getElementById('end').value);
-    console.log("endpoint type:" + typeof GreenPath.endPoint);
 }
 
 initMap = () => {
@@ -59,25 +57,25 @@ initMap = () => {
         GreenPath.displayRouteOnMap(directionsService, directionsDisplay);
     };
     document.getElementById('start').addEventListener('change', onChangeHandler);
-    document.getElementById('end').addEventListener('change', onChangeHandler);
+    // document.getElementById('end').addEventListener('change', onChangeHandler);
 }
 
 GreenPath.mapStarter = () =>{
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer;
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 7,
-        center: { lat: 41.85, lng: -87.65 }
+        zoom: 11,
+        center: { lat:40.78, lng: -73.968285 }
     });
     directionsDisplay.setMap(map);
     return [directionsService, directionsDisplay];
 }
 
 GreenPath.displayRouteOnMap = (directionsService, directionsDisplay) => {
-    console.log(GreenPath.startPoint, GreenPath.endPoint);
+    // console.log(GreenPath.startPoint, GreenPath.endPoint);
     directionsService.route({
         origin: GreenPath.startPoint,
-        destination: GreenPath.endPoint,
+        destination: GreenPath.startPoint,
         travelMode: 'WALKING',
         waypoints: GreenPath.waypts,
         //waypoints: [{location:{ lat: 41.85, lng: -87.65 }, stopover:true}],
@@ -89,4 +87,8 @@ GreenPath.displayRouteOnMap = (directionsService, directionsDisplay) => {
             window.alert('Directions request failed due to ' + status);
         }
     });
+}
+
+function hideLoad(){
+    $('.loader').css('display', 'none');
 }
