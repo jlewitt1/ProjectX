@@ -1,4 +1,4 @@
-from location import Location
+from src.location import Location
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -8,7 +8,7 @@ from mpl_toolkits.axisartist import Axes
 
 class User:
     def __init__(self, config):
-        self.start_loc = [43.733, -73.26]
+        self.start_loc = [40.7829, -73.9654]
         self.end_loc = self.start_loc
         self.distance = 10
         # self.startLoc = config[0]
