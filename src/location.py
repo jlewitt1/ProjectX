@@ -21,8 +21,9 @@ class Location:
             print(way_points_x[count])
             way_points_y.append(y)
             print(way_points_y[count])
-            print("dist is " + str(dist))
-            total += float(dist)
+            print("dist is " + str(total))
+            print("count is " + str(count))
+            total += dist
             count += 1
         return way_points_x, way_points_y
 
