@@ -13,7 +13,7 @@ class Location:
         count = 0
         way_points_x = []
         way_points_y = []
-        while total < 5000:
+        while total < 5000 and count <5:
             x, y, dist = self.find_hottest_point()
             self.x0 = x
             self.y0 = y
@@ -25,6 +25,7 @@ class Location:
             print("count is " + str(count))
             total += dist
             count += 1
+        print ("way_points", way_points_x, way_points_y)
         return way_points_x, way_points_y
 
     def find_hottest_point(self):

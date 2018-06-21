@@ -5,7 +5,7 @@ This is the server side for GreenPath
 from bottle import route, run, get, template, static_file, request, response, debug
 import json
 from src.user import User
-
+from src.location import Location
 
 @get("/")
 def index():
@@ -22,8 +22,19 @@ def handle_route_request():
     reply = {}
     reply["STATUS"] = "SUCCESS"
     coordinates = user.process_user_setting()
+    print ("coordinates", str(coordinates))
+
     #reply["WAYPOINTS"] = [{"latitude": 43.733, "longitude": -73.26}, {"latitude": 43.133, "longitude": -73.96}]
-    reply["WAYPOINTS"] = [{"latitude": coordinates[0], "longitude": coordinates[1]}]
+
+    return_mesg = []
+
+    for i in range(len(coordinates[0])):
+        waypoint_dict = {}
+        waypoint_dict['latitude'] = coordinates[0][i]
+        waypoint_dict['longitude'] = coordinates[1][i]
+        return_mesg.append(waypoint_dict)
+    print ("return_mesg", return_mesg)
+    reply["WAYPOINTS"] = return_mesg
     print(reply["WAYPOINTS"])
     return json.dumps(reply)
 

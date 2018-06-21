@@ -1,5 +1,4 @@
 from src.location import Location
-
 import matplotlib.pyplot as plt
 import numpy as np
 from mpl_toolkits.axes_grid1 import host_subplot
@@ -29,8 +28,8 @@ class User:
 
         x, y = location.find_hottest_route()
         print("after find_hottest_route= " + str(x), str(y))
-        ax.plot(x, y, 'bo')
-        plt.show()
+        # ax.plot(x, y, 'bo')
+        # plt.show()
         return x, y
 
 

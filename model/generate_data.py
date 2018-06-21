@@ -14,6 +14,7 @@ import json
 from geopy import distance
 import math
 import urllib
+import random
 
 
 pymysql.install_as_MySQLdb()
@@ -110,8 +111,22 @@ def hottest_point(starting_location):
     min_lat = min_coords[0]
     min_lng = min_coords[1]
 
-    return min_lat, min_lng, coords_distance(min_lat, min_lng, starting_location[0],starting_location[1])
+    lat_points, lng_points = get_temp_coords()
 
+    return random.choice(lat_points), random.choice(lng_points), coords_distance(min_lat, min_lng, starting_location[0],starting_location[1])
+
+
+def get_temp_coords():
+    lat_points = [40.774172,40.774789,40.773181,40.771702,40.770174]
+    lng_points = [-73.973050, -73.973587, - 73.972471, - 73.973179, - 73.973844]
+
+    return lat_points, lng_points
+
+    # for i in range(len(lat_points)):
+    #     lat = lat_points[i]
+    #     lng = lng_points[i]
+    #
+    # return lat, lng
 
 def coords_distance(lat1, lng1, lat2, lng2):
 
