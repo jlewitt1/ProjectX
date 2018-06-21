@@ -106,12 +106,11 @@ def hottest_point(starting_location):
         distances.append(distance.distance(i, starting_location).km)
 
     min_coords = coords[distances.index(np.min(distances))]
-    print (min_coords)
+    print ("in hottest point function:" + str(min_coords))
     min_lat = min_coords[0]
     min_lng = min_coords[1]
 
-    coords_distance(min_lat, min_lng, starting_location[0],starting_location[1])
-    return min_lat, min_lng
+    return min_lat, min_lng, coords_distance(min_lat, min_lng, starting_location[0],starting_location[1])
 
 
 def coords_distance(lat1, lng1, lat2, lng2):
