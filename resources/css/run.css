@@ -24,11 +24,19 @@ body{
 }
 
 .title{
+<<<<<<< HEAD
+    font-family: 'Asap', sans-serif;
+    font-size:71;
+    bottom: 0;
+    margin-left: 10%;
+    color: darkgreen;
+=======
   font-family: 'Bungee', cursive;
   font-size:31;
   bottom: 0;
   margin-left: 41%;
   color: #D6CE15;
+>>>>>>> 012c73c16fbfe7feec0a5b629a0d2aea7981d0e2
 }
 .logo{
   height: 35px;
@@ -375,4 +383,50 @@ input[type=range]:after {
   color: rgba(0, 100, 0, 1);
 }
 
+  .login-screen{
+      position: absolute;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      top:0;
+      left:0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0,0.5);
+  }
+
+  .login-form{
+    position: relative;
+    width:30%;
+    border-radius: 3px;
+    background: #dfdfdf;
+  }
+ .login-form span{
+     position: absolute;
+     top:0;
+     left:0;
+     opacity: 0.8;
+     cursor: pointer;
+ }
+.login-form input{
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+.login-form input {
+    margin-left: calc(50% - 84px);
+    display: block;
+}
+
+.forgot{
+    margin-top:15px;
+}
+.forgot:hover{
+    color:green;
+}
+.sign-up{
+    display:block;
+}
+.hidden{
+    display:flex;
+}
 

@@ -106,22 +106,24 @@ def hottest_point(starting_location):
         distances.append(distance.distance(i, starting_location).km)
 
     min_coords = coords[distances.index(np.min(distances))]
-    print (min_coords)
+    print ("in hottest point function:" + str(min_coords))
     min_lat = min_coords[0]
     min_lng = min_coords[1]
 
-    coords_distance(min_lat, min_lng, starting_location[0],starting_location[1])
-    return min_lat, min_lng
+    return min_lat, min_lng, coords_distance(min_lat, min_lng, starting_location[0],starting_location[1])
 
 
 def coords_distance(lat1, lng1, lat2, lng2):
 
     origins = str(lat1) + ',' + str(lng1)
-    print (origins)
     destination = str(lat2) + "," + str(lng2)
     payload = {'units': 'metric', 'origins': origins, 'destination': destination, 'key':API_KEY}
-    r= requests.get('https://maps.googleapis.com/maps/api/distancematrix/json', params=payload)
-    print(r.url)
+    url = "https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins={origins}&destinations={destination}&key={key}".format(key=API_KEY,origins=origins,destination=destination)
+    r = requests.get(url)
+    print (r.url)
+    data = r.json()
+    distance = data["rows"][0]["elements"][0]["distance"]["text"][:3]
+    print (distance)
 
     return distance
 
@@ -129,8 +131,7 @@ def main():
     generate_coords()
     generate_routes()
     # query_data()
-    hottest_point([40.12323, -73.923])
-
+    hottest_point([40.7829,-73.9654])
 
 if __name__ == '__main__':
     main()
