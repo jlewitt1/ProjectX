@@ -7,9 +7,13 @@ $('#submit').click(function() {
 
 GreenPath.calculateRoute = () => {
     let userSettings = {}
-    userSettings.startLocation = $('#start').val()
-    userSettings.endLocation = $('#end').val()
-    userSettings.distance = $('#range').val()
+    // userSettings.startLocation = JSON.parse($('#start').val());
+    // userSettings.endLocation = JSON.parse($('#end').val());
+    // userSettings.distance = parseInt($('#range').val());
+
+    userSettings.startLocation = [40.7829, -73.9654];
+    userSettings.endLocation = [40.7829, -73.9654];
+    userSettings.distance = 15;
     
     $.post("/newroute", { "userPreferences": JSON.stringify(userSettings) }, function (result) {
         if (result["STATUS"] != "SUCCESS") {

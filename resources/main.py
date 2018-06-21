@@ -4,7 +4,7 @@ This is the server side for GreenPath
 
 from bottle import route, run, get, template, static_file, request, response, debug
 import json
-from src.user import User
+#from src.user import User
 
 
 @get("/")
@@ -17,6 +17,7 @@ def handle_route_request():
     user_preferences = request.POST.get('userPreferences')
     user_preferences = json.loads(user_preferences)
     print (user_preferences['startLocation'])
+    print(user_preferences['distance'])
     #user = User(user_preferences)
     reply = {}
     reply["STATUS"] = "SUCCESS"
