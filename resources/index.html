@@ -12,13 +12,15 @@
     <link href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Acme|Crimson+Text|Francois+One|Fugaz+One|Josefin+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee|Bungee+Hairline" rel="stylesheet">
 
     <link rel="stylesheet" id="theme" type="text/css" href="./css/run.css">
 </head>
 
 <body>
+    <div class="overall-background"></div>
     <div class="header-container">
-        <img class="logo" src="./images/logo7.png">
+        <img class="logo" src="./images/logo9.png">
         <span class="header-content">
             <span class="title">Green Run</span>
             <span class="log-in btn-primary btn">login</span>
@@ -76,20 +78,16 @@
                 </select>
             </div>
             <!-- range bar -->
-            <div>
+            <div class="distance-setting">
                 <label for="range">
                     <input type="range" name="range" id="range" min="1" max="32" step="0.5" value="1" />
                 </label>
                 <output for="range" class="output"></output>
-                <button id="submit" class="btn btn-primary">Get route!</button>
             </div>
-
+            <button id="submit" class="btn btn-primary">Get route!</button>
         </div>
         <div class="map-container">
-            <div class="the-map">
-
-                <div id="map"></div>
-            </div>
+            <div id="map"></div>
         </div>
     </div>
     <div class="footer">

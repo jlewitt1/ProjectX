@@ -1,80 +1,75 @@
 h1{
-    margin:0;
+  margin:0;
 }
 body{
-    text-align:center;
+  text-align:center;
+}
+.header-container{
+  background-color: #1F2605;
+  position: absolute;
+  height: 65px;
+  margin-top: 15px;
+  width:100%;
+  box-sizing: border-box;
+  display: flex;
+}
+.header-content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width:100%;
+  float: right;
+  box-sizing: border-box;
 }
 
 .title{
-    font-family: 'Asap', sans-serif;
-    font-size:71;
-    bottom: 0;
-    margin-left: 10%;
-    text-shadow: 2px 2px black;
-    color: darkgreen;
+  font-family: 'Bungee', cursive;
+  font-size:31;
+  bottom: 0;
+  margin-left: 41%;
+  color: #D6CE15;
 }
 .logo{
-    height: 50%;
-    width:10%;
-    margin-left: 5.5%;
-    margin-top:2.5%;
+  height: 35px;
+  margin-left: 70px;
+  margin-top:13px;
+}
+
+.log-in{
+  width:100px;
+  height: 30px;
+  margin-right:30px;
+}
+
+.overall-background{
+  background-image: url('../images/overall-background.png');
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  z-index: -4;
 }
 
 .main-container{
-    display: flex;
-    position: relative;
-    top:20%;
-    height: 94%;
-}
-.header-container{
-    position: absolute;
-    height: 20%;
-    width:100%;
-    box-sizing: border-box;
-    display: flex;
-}
-.header-content{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    width:80%;
-    float: right;
-    box-sizing: border-box;
+  display: flex;
+  position: relative;
+  top:120px;
+  height: 94%;
 }
 
 .media{
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
-.header-logo{
-    width:20%;
-    background: black;
-    box-sizing: border-box;
-}
-.menu-container{
-    height: 80%;
-    width: 20%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
 .map-container{
-    height: 80%;
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.the-map{
-    border-radius: 5px;
-    height: 98%%;
-    width: 98%;   
-}
 body{
   text-align:center;
   background: #d5d5d5; /* Old browsers */
@@ -86,54 +81,52 @@ body{
   background: linear-gradient(to bottom,  #d5d5d5 0%,#f3f3f3 80%,#feffff 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d5d5d5', endColorstr='#feffff',GradientType=0 ); /* IE6-9 */
   overflow: hidden;
-  }
+}
 
-  #map {
-    border-radius: 5px;
-    height: 100%;
-    width: 100%;
-  }
+#map {
+  border-radius: 5px;
+  height: 98%;
+  width: calc(100% - 20px);
+  right: 20px;
+  bottom: 70px;
+  overflow: hidden;
+  height: calc(100% - 150px);
+}
 
-  .start-point{
-      margin-bottom: 3%;
-  }
-
-  .end-point{
-    margin-bottom: 3%;
-  }
-
-  #submit{
-      margin-bottom:10%;
-  }
-  .btn-primary:hover{
-      box-shadow: 1px 2px black;
-    background: rgb(0, 100, 0);
-    border-color: rgba(0,50,0,1)
-
- }
 .btn-primary{
-    box-shadow: 1px 2px black;
-    background: rgb(0, 138, 0);
-    border-color: rgba(0,88,0,1)
+  box-shadow: 1px 2px black;
+  color: #1F6521;
+  background: #D6CE15;
+  border-color: #1F6521;
+  font-family: 'Bungee', cursive;
+  font-weight: 100;
+}
+
+.btn-primary:hover{
+  box-shadow: 1px 2px black;
+  background: rgb(0, 100, 0);
+  border-color: rgba(0,50,0,1)
+  
 }
 
 .footer{
-    position: absolute;
-    bottom: 0;
-    width:100%;
-    height: 5%;
-    box-sizing: border-box;
+  background-color: #1F2605;
+  position: relative;
+  bottom: 10px;
+  width:100%;
+  height: 40px;
+  box-sizing: border-box;
 }
 
 .footer .fa{
-    margin-right: 3%;
-    font-size: 26px;
-    float:right;
+  margin-right: 3%;
+  font-size: 26px;
+  float:right;
 }
 .footer .fa:hover{
-    opacity: 0.8;
+  opacity: 0.8;
 }
-The joy was in the act of running and in the journey, not in the destination.” John Bingham #
+/* The joy was in the act of running and in the journey, not in the destination.” John Bingham #
 dont stop when you are tired, stop when youre done!
 if it doesnt challenge you it wont change you - fred deVito
 "Running allows you to set you mind free. Nothing impossible. Nothing unattainable." — Kara Goucher
@@ -158,20 +151,46 @@ Running has given me the courage to start, the determination to keep trying, and
 Runners just do it – they run for the finish line even if someone else has reached it first. Unknown
 “Pain is temporary.  It may last a minute, or an hour, or a day, or a year, but eventually it will subside and something else will take its place.  If I quit, however, it lasts forever.  Lance Armstrong
 “Running is about finding your inner peace, and so is a life well lived.” Dean Karnazes
-“Running is real and relatively simple…but it ain’t easy.”  Mark Will-Weber
+“Running is real and relatively simple…but it ain’t easy.”  Mark Will-Weber */
 
 .social{
-    margin-right:4%;
-    cursor: pointer;
+  color: #D6CE15;
+  margin-right:30px;
+  margin-top: 8px;
+  cursor: pointer;
 }
-.log-in{
-    width:15%;
-    height: 26%;
-    margin-top: 2%;
-    margin-right:3%;
+
+.menu-container{
+  width: 250px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  padding-top: 7%;
 }
-  /* #############range things */
-  label[for=range] {
+
+.start-point{
+  margin-bottom: 3%;
+}
+
+.end-point{
+  margin-bottom: 3%;
+}
+
+#submit{
+  margin-bottom:10%;
+}
+
+.distance-setting{
+  background-color: #D6CE15;
+    border: solid 1px #1F6521;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+/* #############range things */
+label[for=range] {
   height: 49px;
   padding-top: 6px;
   width: 100%;
@@ -179,26 +198,27 @@ Runners just do it – they run for the finish line even if someone else has rea
   -webkit-transform: skew(-62deg);
   overflow: hidden;
   padding-bottom: 10px;
-  }
-  label[for=range]:after {
+}
+label[for=range]:after {
+  background-color: rgba(31, 101, 33, 0.712);
   content: "";
   position: absolute;
   bottom: 11px;
-  left: 69px;
+  left: 34px;
   height: 9px;
   /* width: 278px; */
   width: 100%;
   box-shadow: 0px 3px 10px -3px rgba(0, 0, 0, 0.51);
   /* -webkit-transform: skew(62deg); */
-  }
-  input[type=range] {
+}
+input[type=range] {
   -webkit-appearance: none;
   background-color: transparent;
   width: 100%;
   /* width: 300px; */
   height: 38px;
-    padding-top:10px;
-    overflow:hidden;
+  padding-top:10px;
+  overflow:hidden;
   margin: 0;
   /* margin-left: -20px; */
   transform-style: preserve-3d;
@@ -206,28 +226,29 @@ Runners just do it – they run for the finish line even if someone else has rea
   transform-origin: 50% 50% 300px;
   perspective-origin: 50% -121%;
   transform: skew(62deg);
-  }
-  input[type=range]:focus{
-    outline:none;
-  }
-  input[type="range"]::-webkit-slider-thumb {
-    position:relative;
-       -webkit-appearance: none;
-      cursor:pointer;
-      background-color: transparent;
-      width: 30px;
-      height: 18px;
-      box-shadow: 1px 5px 10px -1px rgba(0, 0, 0,0.2),
-      -25px 0 0 10px rgba(90, 184, 6, 0.5),
-      -75px 0 0 10px rgba(90, 184, 6, 0.5),
-      -125px 0 0 10px rgba(90, 184, 6, 0.5),
-      -175px 0 0 10px rgba(90, 184, 6, 0.5),
-      -225px 0 0 10px rgba(90, 184, 6, 0.5),
-      -275px 0 0 10px rgba(90, 184, 6, 0.5),
-      -325px 0 0 10px rgba(90, 184, 6, 0.5);
-    z-index:2;
-  }
-  input[type="range"]::-webkit-slider-thumb:after {
+}
+input[type=range]:focus{
+  outline:none;
+
+}
+input[type="range"]::-webkit-slider-thumb {
+  position:relative;
+  -webkit-appearance: none;
+  cursor:pointer;
+  background-color: transparent;
+  width: 30px;
+  height: 18px;
+  box-shadow: 1px 5px 10px -1px rgba(0, 0, 0,0.2),
+  -25px 0 0 10px rgba(90, 184, 6, 0.5),
+  -75px 0 0 10px rgba(90, 184, 6, 0.5),
+  -125px 0 0 10px rgba(90, 184, 6, 0.5),
+  -175px 0 0 10px rgba(90, 184, 6, 0.5),
+  -225px 0 0 10px rgba(90, 184, 6, 0.5),
+  -275px 0 0 10px rgba(90, 184, 6, 0.5),
+  -325px 0 0 10px rgba(90, 184, 6, 0.5);
+  z-index:2;
+}
+input[type="range"]::-webkit-slider-thumb:after {
   content: "";
   position: absolute;
   z-index: 1;
@@ -240,8 +261,9 @@ Runners just do it – they run for the finish line even if someone else has rea
   transform: rotateX(90deg);
   transform-origin: 0 0px 0;
   transform: rotateX(90deg) translateY(-140px) translateZ(-18px);
-  }
-  input[type="range"]::-webkit-slider-thumb:before {
+}
+
+input[type="range"]::-webkit-slider-thumb:before {
   content: "< >";
   font-family: 'Concert One', cursive;
   position: absolute;
@@ -266,8 +288,8 @@ Runners just do it – they run for the finish line even if someone else has rea
   text-align: center;
   line-height: 19px;
   font-size: 17px;
-  }
-  input[type="range"]::-webkit-slider-runnable-track:before {
+}
+input[type="range"]::-webkit-slider-runnable-track:before {
   content: "";
   position: absolute;
   height: 38px;
@@ -283,8 +305,9 @@ Runners just do it – they run for the finish line even if someone else has rea
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dfdfdf', endColorstr='#d8d8d8',GradientType=0 );
   bottom: 0;
   left: 0;
-  }
-  input[type="range"]::-webkit-slider-runnable-track:after {
+
+}
+input[type="range"]::-webkit-slider-runnable-track:after {
   content: "";
   position: absolute;
   height: 10px;
@@ -293,8 +316,9 @@ Runners just do it – they run for the finish line even if someone else has rea
   top: 0;
   right: 26px;
   transform: skew(62deg);
-  }
-  input[type=range]:before {
+
+}
+input[type=range]:before {
   content: "";
   position: absolute;
   background: rgb(190, 190, 190);
@@ -304,8 +328,9 @@ Runners just do it – they run for the finish line even if someone else has rea
   height: 1px;
   top: 29px;
   z-index: 1;
-  }
-  input[type=range]:after {
+
+}
+input[type=range]:after {
   content: "";
   position: absolute;
   background: rgb(190, 190, 190);
@@ -332,22 +357,22 @@ Runners just do it – they run for the finish line even if someone else has rea
   210px 1px 0 rgb(235, 235, 235),
   240px 1px 0 rgb(235, 235, 235),
   270px 1px 0 rgb(235, 235, 235);
-  }
-  
-  .budget {
+}
+
+.budget {
   text-align: center;
   width: 100%;
   font-size: 2em;
   font-family: 'Advent Pro', sans-serif;
   color: rgb(58, 58, 58);
-  }
-  .output {
+}
+.output {
   text-align: center;
+  font-family: 'Bungee Hairline', cursive;
+  font-weight: bolder;
   width: 100%;
   font-size: 2em;
-  font-family: 'Advent Pro', sans-serif;
   color: rgba(0, 100, 0, 1);
-  text-shadow: 0px 2px black;
-  }
+}
 
 
