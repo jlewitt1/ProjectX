@@ -1,7 +1,5 @@
-import matplotlib.pyplot as plt
 import numpy as np
-from mpl_toolkits.axes_grid1 import host_subplot
-from mpl_toolkits.axisartist import Axes
+
 from model import generate_data
 
 

@@ -34,25 +34,8 @@
             <div>
                 <div class="start-point">
                     <select id="start" class="btn btn-primary">
-                        <option selected disabled value="chicago, il">Start Point</option>
-                        <option value="[40.7829, -73.9654]">Central Park</option>
-                        <option value="st louis, mo">St Louis</option>
-                        <option value="joplin, mo">Joplin, MO</option>
-                        <option value="oklahoma city, ok">Oklahoma City</option>
-                        <option value="amarillo, tx">Amarillo</option>
-                        <option value="gallup, nm">Gallup, NM</option>
-                        <option value="flagstaff, az">Flagstaff, AZ</option>
-                        <option value="winona, az">Winona</option>
-                        <option value="kingman, az">Kingman</option>
-                        <option value="barstow, ca">Barstow</option>
-                        <option value="san bernardino, ca">San Bernardino</option>
-                        <option value="los angeles, ca">Los Angeles</option>
-                    </select>
-                </div>
-                <div class="end-point">
-                    <select id="end" class="btn btn-primary">
-                        <option selected disabled value="chicago, il">End Point</option>
-                        <option value="chicago, il">Chicago</option>
+                        <option selected disabled value='{ "lat": 40.7829, "lng": -73.9654 }'>Start Point</option>
+                        <option value='{ "lat": 40.7829, "lng": -73.9654 }'>Central Park</option>
                         <option value="st louis, mo">St Louis</option>
                         <option value="joplin, mo">Joplin, MO</option>
                         <option value="oklahoma city, ok">Oklahoma City</option>
@@ -73,8 +56,7 @@
                     <option disabled selected value="">Choose Terrain</option>
                     <option value="">Road</option>
                     <option value="">Beach</option>
-                    <option value="">Rain Foreset</option>
-                    <option value="">Rail Road</option>
+                    <option value="">Park</option>
                 </select>
             </div>
             <!-- range bar -->
@@ -84,7 +66,12 @@
                 </label>
                 <output for="range" class="output"></output>
             </div>
-            <button id="submit" class="btn btn-primary">Get route!</button>
+            <button id="submit" class="btn btn-primary" onclick="cal()" >Get route!</button>
+            <div class="loader">
+                
+                <!-- <iframe src="https://giphy.com/embed/l3vQX4tXkLa1PTZ2U" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen>
+                </iframe><p><a href="https://giphy.com/gifs/trippy-run-abstract-l3vQX4tXkLa1PTZ2U">via GIPHY</a></p> -->
+            </div>
         </div>
         <div class="map-container">
             <div id="map"></div>
@@ -101,21 +88,6 @@
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC34UXx4v-s8keP7i2yM7V5B0J58ra7gDo&callback=initMap">
     </script>
     <script src="./js/routeGod.js"></script>
-
-    <div class="login-screen">
-        <div class="login-form">
-            <span onClick="hide()" class="glyphicon glyphicon-remove"></span>
-            <h3>Log In</h3>
-            <input placeholder="Username" type="text">
-            <input type="password" placeholder="password" type="text">
-            <div>
-                <button class="btn btn-primary" onclick="hide()">Run</button>
-            </div>
-            <div class="forgot">Forgot my password</div>
-            <h3 class="sign-up btn btn-primary">Sign Up</h3>
-        </div>
-
-    </div>
 </body>
 
 </html>
