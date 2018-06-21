@@ -8,11 +8,16 @@ from sqlalchemy import create_engine
 import pymysql
 import numpy as np
 import geopy.distance
+import requests
+from requests.auth import HTTPDigestAuth
+import json
 from geopy import distance
+import math
+import urllib
 
 
 pymysql.install_as_MySQLdb()
-# API_KEY = 'AIzaSyC34UXx4v-s8keP7i2yM7V5B0J58ra7gDo'
+API_KEY = 'AIzaSyC34UXx4v-s8keP7i2yM7V5B0J58ra7gDo'
 SQL_USER = 'Josh'
 SQL_PWD = 123
 DISK_ENGINE = create_engine('mysql+mysqldb://{user}:{pwd}@localhost/running'.format(user=SQL_USER, pwd=SQL_PWD))
@@ -105,9 +110,20 @@ def hottest_point(starting_location):
     min_lat = min_coords[0]
     min_lng = min_coords[1]
 
-    # print (min_lat, min_lng)
+    coords_distance(min_lat, min_lng, starting_location[0],starting_location[1])
     return min_lat, min_lng
 
+
+def coords_distance(lat1, lng1, lat2, lng2):
+
+    origins = str(lat1) + ',' + str(lng1)
+    print (origins)
+    destination = str(lat2) + "," + str(lng2)
+    payload = {'units': 'metric', 'origins': origins, 'destination': destination, 'key':API_KEY}
+    r= requests.get('https://maps.googleapis.com/maps/api/distancematrix/json', params=payload)
+    print(r.url)
+
+    return distance
 
 def main():
     generate_coords()
